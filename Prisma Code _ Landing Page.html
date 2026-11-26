@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prisma Code | Engenharia de Software e Soluções Tecnológicas</title>
+<meta name="description" content="Desenvolvimento de software, modernização de sistemas, DevOps, infraestrutura e soluções web. Conheça a Prisma Code.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prisma Code | Engenharia de Software e Soluções Tecnológicas">
+<meta property="og:description" content="Desenvolvimento de software, modernização de sistemas, DevOps, infraestrutura e soluções web.">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#070C18">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23070C18'/%3E%3Cpath d='M20 6 34 32H6z' fill='%23168BFF'/%3E%3Cpath d='M20 6 26 32H6z' fill='%2300D5FF'/%3E%3Cpath d='M20 6 34 32H26z' fill='%238657FF'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#070C18;--bg2:#0D1526;--cy:#00D5FF;--bl:#168BFF;--vi:#8657FF;--tx:#F4F7FF;--mu:#B5C2D5;--bd:rgba(181,194,213,.16);--g:linear-gradient(120deg,#00D5FF,#168BFF 55%,#8657FF);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));height:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{line-height:1.15;margin:0 0 .6em;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,5.5vw,3.6rem)}h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}h3{font-size:1.15rem}
+p{margin:0 0 1em;color:var(--mu)}a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:88px 0}.alt{background:var(--bg2)}
+.eyebrow{color:var(--cy);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;display:block}
+.lead{max-width:62ch;font-size:1.08rem}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:600;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.pri{background:var(--g);color:#fff;box-shadow:0 8px 28px rgba(22,139,255,.28)}
+.sec{border-color:var(--bd);background:rgba(255,255,255,.03);color:var(--tx)}.sec:hover{border-color:var(--cy)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,12,24,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.2rem;letter-spacing:-.02em}
+.logo svg{width:34px;height:34px}.logo span b{font-weight:500;color:var(--cy)}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;color:var(--mu);font-size:.95rem;transition:color .2s}nav a:hover{color:var(--tx)}
+nav .btn{min-height:40px;padding:0 18px;color:#fff}
+.menu{display:none;background:none;border:1px solid var(--bd);color:var(--tx);width:46px;height:46px;border-radius:10px;cursor:pointer}
+.hero{padding:80px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-160px;top:-140px;background:radial-gradient(circle,rgba(134,87,255,.22),transparent 65%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
+.grad{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.vis svg{width:100%;height:auto;max-width:460px;display:block;margin-inline:auto;animation:fl 7s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.grid{display:grid;gap:20px}.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:28px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:rgba(0,213,255,.5);transform:translateY(-3px)}
+.ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(0,213,255,.1);border:1px solid rgba(0,213,255,.3);margin-bottom:18px}
+.ic svg{width:24px;height:24px;stroke:var(--cy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card ul{margin:0 0 14px;padding-left:18px;color:var(--mu);font-size:.93rem}
+.ben{font-size:.9rem;color:var(--tx);border-top:1px solid var(--bd);padding-top:12px;margin:0}.ben b{color:var(--cy)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.px{border:1px solid var(--bd);border-radius:20px;padding:36px;background:linear-gradient(160deg,rgba(22,139,255,.1),rgba(134,87,255,.1))}
+.tag{display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;border:1px solid rgba(134,87,255,.6);color:var(--tx);margin-bottom:16px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s;list-style:none;padding:0;margin:40px 0 0;position:relative}
+.steps::before{content:"";position:absolute;left:5%;right:5%;top:22px;height:2px;background:var(--g);opacity:.5}
+.steps li{position:relative;text-align:center;padding-top:60px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:50%;transform:translateX(-50%);width:46px;height:46px;border-radius:50%;background:var(--bg);border:2px solid var(--cy);display:grid;place-items:center;font-weight:700}
+.steps h3{margin-bottom:6px}.steps p{font-size:.9rem;margin:0}
+.info{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.info div{border-left:2px solid var(--bl);padding-left:14px}.info small{display:block;color:var(--mu);font-size:.8rem}
+form{display:grid;gap:16px;background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:28px}
+label{display:grid;gap:6px;font-size:.9rem;font-weight:600}label span{font-weight:400;color:var(--mu)}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;min-height:48px;width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--cy);border-color:transparent}
+.err{color:#FF9AA8;font-size:.82rem;min-height:1em;font-weight:400}
+[aria-invalid=true]{border-color:#FF9AA8}
+.note{font-size:.85rem;margin:0}#st{font-weight:600;color:var(--cy);margin:0}
+.wa{background:#1FA855;color:#fff}
+footer{border-top:1px solid var(--bd);padding:56px 0 32px;background:var(--bg2)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer h3{font-size:.85rem;color:var(--tx);text-transform:uppercase;letter-spacing:.1em}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}footer li a{color:var(--mu);text-decoration:none;font-size:.92rem}footer li a:hover{color:var(--cy)}
+.copy{border-top:1px solid var(--bd);margin-top:36px;padding-top:20px;font-size:.85rem;color:var(--mu)}
+@media(max-width:900px){
+.menu{display:block}
+nav ul{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--bg2);padding:16px 20px 22px;border-bottom:1px solid var(--bd);gap:4px}
+nav ul.open{display:flex}nav li a{display:flex;align-items:center;min-height:46px}
+.hero .wrap,.split,.g3,.info,.fg{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}.vis{order:-1}.vis svg{max-width:260px}
+.steps{grid-template-columns:1fr;gap:6px}.steps::before{left:22px;right:auto;top:0;bottom:0;width:2px;height:auto}
+.steps li{text-align:left;padding:0 0 18px 64px}.steps li::before{left:0;transform:none}
+section{padding:64px 0}
+}
+@media(min-width:901px) and (max-width:1060px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00D5FF"/><stop offset="1" stop-color="#168BFF"/></linearGradient>
+<linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#168BFF"/><stop offset="1" stop-color="#8657FF"/></linearGradient>
+<symbol id="mk" viewBox="0 0 40 40"><path d="M20 4 36 34H4z" fill="none" stroke="#168BFF" stroke-width="1.5" stroke-linejoin="round"/><path d="M20 4 27 34H4z" fill="url(#gA)"/><path d="M20 4 36 34H27z" fill="url(#gB)"/><path d="M20 4 27 34" stroke="#070C18" stroke-width="1.2"/></symbol></defs></svg>
+
+<header><div class="wrap nav">
+<a class="logo" href="#topo" aria-label="Prisma Code, início"><svg aria-hidden="true"><use href="#mk"/></svg><span>Prisma<b>Code</b></span></a>
+<nav aria-label="Principal">
+<button class="menu" id="mb" aria-expanded="false" aria-controls="ml" aria-label="Abrir menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<ul id="ml"><li><a href="#empresa">Empresa</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#tecnologia">Tecnologia</a></li><li><a href="#processo">Processo</a></li><li><a href="#contato">Contato</a></li>
+<li><a class="btn wa" href="https://wa.me/5512997389576?text=Ol%C3%A1!%20Conheci%20a%20Prisma%20Code%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20tecnol%C3%B3gica." target="_blank" rel="noopener">WhatsApp</a></li></ul>
+</nav></div></header>
+
+<main id="topo">
+<section class="hero"><div class="wrap">
+<div><span class="eyebrow">Prisma Code</span>
+<h1>Engenharia de software para <span class="grad">transformar desafios em soluções.</span></h1>
+<p class="lead">Desenvolvemos, modernizamos e mantemos soluções tecnológicas para empresas que precisam de sistemas confiáveis, infraestrutura eficiente e tecnologia preparada para evoluir.</p>
+<div class="cta"><a class="btn pri" href="#servicos">Conheça nossas soluções</a><a class="btn sec" href="#contato">Converse com um especialista</a></div></div>
+<div class="vis"><svg viewBox="0 0 400 400" role="img" aria-label="Prisma geométrico com facetas conectadas, símbolo da Prisma Code">
+<path d="M200 40 350 320H50z" fill="none" stroke="#168BFF" stroke-opacity=".5" stroke-width="1.5"/>
+<path d="M200 40 255 320H50z" fill="url(#gA)" fill-opacity=".9"/><path d="M200 40 350 320H255z" fill="url(#gB)" fill-opacity=".9"/>
+<path d="M200 40 255 320M125 180 300 180M90 250 320 250" stroke="#070C18" stroke-width="2" stroke-opacity=".6"/>
+<g stroke="#00D5FF" stroke-opacity=".5" stroke-width="1.2" fill="none"><path d="M20 120 125 180M380 110 300 180M30 340 90 250M370 350 320 250"/></g>
+<g fill="#070C18" stroke="#00D5FF" stroke-width="2"><circle cx="20" cy="120" r="6"/><circle cx="380" cy="110" r="6"/><circle cx="30" cy="340" r="6"/><circle cx="370" cy="350" r="6"/></g>
+</svg></div></div></section>
+
+<section id="empresa" class="alt"><div class="wrap split">
+<div><span class="eyebrow">A empresa</span><h2>Tecnologia com propósito. Engenharia com visão de futuro.</h2></div>
+<div><p class="lead">A Prisma Code atua no desenvolvimento e na evolução de soluções tecnológicas, conectando engenharia de software, infraestrutura e experiência digital.</p>
+<p class="lead">Nosso foco é compreender os desafios de cada negócio e construir soluções consistentes, sustentáveis e preparadas para acompanhar sua evolução.</p></div></div></section>
+
+<section id="servicos"><div class="wrap">
+<span class="eyebrow">Serviços</span><h2>Soluções para construir, modernizar e sustentar.</h2>
+<div class="grid g3" style="margin-top:36px">
+<article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>Engenharia de Software</h3><ul><li>Sistemas sob medida</li><li>Arquitetura e organização de aplicações</li><li>Integração entre sistemas</li><li>Evolução e manutenção</li></ul><p class="ben"><b>Benefício:</b> software alinhado ao negócio e fácil de evoluir.</p></article>
+<article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg></div><h3>Modernização de Sistemas Legados</h3><ul><li>Análise de aplicações existentes</li><li>Refatoração e migração tecnológica</li><li>Desempenho e manutenibilidade</li><li>Evolução gradual</li></ul><p class="ben"><b>Benefício:</b> mais estabilidade sem recomeçar do zero.</p></article>
+<article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div><h3>DevOps e SysAdmin</h3><ul><li>Administração de servidores</li><li>Automação e implantação</li><li>Ambientes de desenvolvimento e produção</li><li>Monitoramento e confiabilidade</li></ul><p class="ben"><b>Benefício:</b> operação previsível e entregas mais seguras.</p></article>
+<article class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3>Sistemas Web e Sites</h3><ul><li>Aplicações web</li><li>Sites institucionais</li><li>Plataformas e interfaces administrativas</li><li>Soluções digitais para empresas</li></ul><p class="ben"><b>Benefício:</b> presença digital que sustenta a operação.</p></article>
+<article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M9 13h3"/></svg></div><h3>UI/UX e Experiência Digital</h3><ul><li>Planejamento de interfaces</li><li>Organização de fluxos</li><li>Usabilidade e design de interfaces</li><li>Experiências consistentes</li></ul><p class="ben"><b>Benefício:</b> produtos mais claros para quem os usa.</p></article>
+</div></div></section>
+
+<section id="tecnologia" class="alt"><div class="wrap split">
+<div><span class="eyebrow">Tecnologia proprietária</span><h2>Pytrix — Engenharia em evolução.</h2>
+<p class="lead">O Pytrix representa nossa iniciativa de pesquisa e desenvolvimento tecnológico, com foco na construção e evolução de soluções próprias.</p>
+<p>É um projeto em desenvolvimento contínuo, que reflete nossa busca por arquitetura, organização e aprimoramento de software.</p></div>
+<div class="px"><span class="tag">Em desenvolvimento contínuo</span><h3>Acompanhe o projeto</h3><p>O código e o histórico de evolução estão disponíveis publicamente no GitHub, para quem deseja conhecer o projeto.</p>
+<a class="btn pri" href="https://github.com/nandosilveiradev/pytrix/tree/feature/pytrix-refinery-v1" target="_blank" rel="noopener">Conheça o Pytrix no GitHub</a></div></div></section>
+
+<section id="diferenciais"><div class="wrap">
+<span class="eyebrow">Diferenciais</span><h2>Por que trabalhar com a Prisma Code.</h2>
+<div class="grid g3" style="margin-top:36px">
+<div class="card"><h3>Visão de engenharia</h3><p style="margin:0">Pensamos além da execução de tarefas: estrutura, critérios e decisões técnicas.</p></div>
+<div class="card"><h3>Arquitetura e qualidade</h3><p style="margin:0">Atenção à organização do software para que ele seja sustentável.</p></div>
+<div class="card"><h3>Alinhamento ao negócio</h3><p style="margin:0">Soluções desenhadas a partir das necessidades reais de cada cliente.</p></div>
+<div class="card"><h3>Sistemas existentes</h3><p style="margin:0">Capacidade de trabalhar com o que já está em operação.</p></div>
+<div class="card"><h3>Dev e infraestrutura</h3><p style="margin:0">Desenvolvimento e infraestrutura integrados, do código à implantação.</p></div>
+<div class="card"><h3>Comunicação direta</h3><p style="margin:0">Diálogo objetivo, com foco em manutenção e evolução contínua.</p></div>
+</div></div></section>
+
+<section id="processo" class="alt"><div class="wrap">
+<span class="eyebrow">Processo</span><h2>Um fluxo simples, do entendimento à evolução.</h2>
+<ol class="steps">
+<li><h3>Entendimento</h3><p>Cenário, objetivos e desafios.</p></li>
+<li><h3>Planejamento</h3><p>Abordagem técnica e prioridades.</p></li>
+<li><h3>Desenvolvimento</h3><p>Implementação organizada.</p></li>
+<li><h3>Validação</h3><p>Avaliação e ajustes.</p></li>
+<li><h3>Evolução</h3><p>Necessidades futuras e melhorias.</p></li></ol></div></section>
+
+<section id="atendimento"><div class="wrap"><div class="info">
+<div><small>Localização</small>Jacareí – SP</div>
+<div><small>Presencial</small>Vale do Paraíba</div>
+<div><small>Remoto</small>Todo o Brasil</div>
+<div><small>Horário comercial</small>10h às 18h</div></div></div></section>
+
+<section id="contato" class="alt"><div class="wrap split" style="align-items:start">
+<div><span class="eyebrow">Contato</span><h2>Seu próximo projeto começa com uma boa conversa.</h2>
+<p class="lead">Conte um pouco sobre seu desafio. Vamos entender suas necessidades e avaliar como a Prisma Code pode contribuir.</p>
+<a class="btn wa" href="https://wa.me/5512997389576?text=Ol%C3%A1!%20Conheci%20a%20Prisma%20Code%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20tecnol%C3%B3gica." target="_blank" rel="noopener">Conversar pelo WhatsApp · (12) 99738-9576</a></div>
+<form id="f" novalidate aria-describedby="nt">
+<label>Nome<input name="n" autocomplete="name" required aria-describedby="e1"><span class="err" id="e1"></span></label>
+<label>Empresa <span>(opcional)</span><input name="c" autocomplete="organization"></label>
+<label>E-mail<input name="m" type="email" autocomplete="email" required aria-describedby="e2"><span class="err" id="e2"></span></label>
+<label>Tipo de projeto<select name="t" required aria-describedby="e3"><option value="">Selecione</option><option>Engenharia de Software</option><option>Modernização de sistema legado</option><option>DevOps e SysAdmin</option><option>Sistema web ou site</option><option>UI/UX</option><option>Outro</option></select><span class="err" id="e3"></span></label>
+<label>Descrição da necessidade<textarea name="d" required aria-describedby="e4"></textarea><span class="err" id="e4"></span></label>
+<button class="btn pri" type="submit">Enviar pelo WhatsApp</button>
+<p class="note" id="nt">Este formulário não usa servidor: ao enviar, ele abre o WhatsApp com sua mensagem já preenchida, e o envio é concluído por lá.</p>
+<p id="st" role="status" aria-live="polite"></p></form></div></section>
+</main>
+
+<footer><div class="wrap"><div class="fg">
+<div><a class="logo" href="#topo"><svg aria-hidden="true"><use href="#mk"/></svg><span>Prisma<b>Code</b></span></a><p style="margin-top:14px;font-size:.92rem">Engenharia de software e soluções tecnológicas: sistemas confiáveis, infraestrutura eficiente e evolução contínua.</p></div>
+<div><h3>Navegação</h3><ul><li><a href="#empresa">Empresa</a></li><li><a href="#tecnologia">Tecnologia</a></li><li><a href="#processo">Processo</a></li><li><a href="#contato">Contato</a></li></ul></div>
+<div><h3>Serviços</h3><ul><li><a href="#servicos">Engenharia de Software</a></li><li><a href="#servicos">Sistemas Legados</a></li><li><a href="#servicos">DevOps e SysAdmin</a></li><li><a href="#servicos">Web e UI/UX</a></li></ul></div>
+<div><h3>Contato</h3><ul><li><a href="https://github.com/nandosilveiradev/pytrix/tree/feature/pytrix-refinery-v1" target="_blank" rel="noopener">Pytrix no GitHub</a></li><li><a href="https://wa.me/5512997389576" target="_blank" rel="noopener">WhatsApp (12) 99738-9576</a></li><li>Jacareí – SP</li></ul></div></div>
+<div class="copy">© <span id="y">2026</span> Prisma Code. Todos os direitos reservados.</div></div></footer>
+
+<script>
+(function(){
+var mb=document.getElementById('mb'),ml=document.getElementById('ml');
+function tg(o){ml.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')}
+mb.addEventListener('click',function(){tg(!ml.classList.contains('open'))});
+ml.addEventListener('click',function(e){if(e.target.closest('a'))tg(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')tg(false)});
+document.getElementById('y').textContent=new Date().getFullYear();
+var f=document.getElementById('f'),st=document.getElementById('st');
+var rules=[['n','e1','Informe seu nome.'],['m','e2','Informe um e-mail válido.'],['t','e3','Selecione o tipo de projeto.'],['d','e4','Descreva brevemente sua necessidade.']];
+f.addEventListener('submit',function(e){
+e.preventDefault();var ok=true,first=null;
+rules.forEach(function(r){var el=f.elements[r[0]],er=document.getElementById(r[1]),v=el.value.trim();
+var bad=!v||(r[0]==='m'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+el.setAttribute('aria-invalid',bad);er.textContent=bad?r[2]:'';
+if(bad){ok=false;first=first||el}});
+if(!ok){st.textContent='Revise os campos destacados.';first.focus();return}
+var c=f.elements.c.value.trim();
+var msg='Olá! Conheci a Prisma Code pelo site.\nNome: '+f.elements.n.value.trim()+(c?'\nEmpresa: '+c:'')+'\nE-mail: '+f.elements.m.value.trim()+'\nTipo de projeto: '+f.elements.t.value+'\nNecessidade: '+f.elements.d.value.trim();
+st.textContent='Abrindo o WhatsApp com sua mensagem. Conclua o envio por lá.';
+window.open('https://wa.me/5512997389576?text='+encodeURIComponent(msg),'_blank','noopener');
+});
+f.addEventListener('input',function(e){e.target.removeAttribute('aria-invalid')});
+})();
+</script>
+</body>
+</html>
